@@ -1,0 +1,502 @@
+<robot
+  name="pincherArm">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0926066118923857 -0.0280025131483853 -0.0540373691785572"
+        rpy="0 0 0" />
+      <mass
+        value="6.52483814153626E-05" />
+      <inertia
+        ixx="1.52121308109547E-08"
+        ixy="-2.12820300494534E-09"
+        ixz="-1.4858879775439E-09"
+        iyy="5.42814518251725E-09"
+        iyz="-7.14028360950444E-09"
+        izz="1.06697407137429E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="-0.000432851714764135 -0.00107468535306401 0.0198918525995066"
+        rpy="0 0 0" />
+      <mass
+        value="5.03091268862519E-05" />
+      <inertia
+        ixx="3.65489126631514E-09"
+        ixy="-5.572095763386E-12"
+        ixz="8.97485695617096E-11"
+        iyy="3.64333281751561E-09"
+        iyz="2.22274876980547E-10"
+        izz="1.60559558068048E-11" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.085424 -0.0088494 -0.026844"
+      rpy="-4.5531E-15 -4.3762E-17 -0.79622" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="2.59915688095858E-06 0.0494699487960092 -0.0191438736432026"
+        rpy="0 0 0" />
+      <mass
+        value="4.72207900718367E-05" />
+      <inertia
+        ixx="9.38585659256948E-09"
+        ixy="-9.23474198915082E-13"
+        ixz="2.35719779204351E-13"
+        iyy="4.39912439631366E-10"
+        iyz="1.23294566864076E-09"
+        izz="8.94594443705118E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="-0.0184 -0.0145 0.024"
+      rpy="1.5708 6.9111E-15 -1.5708" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link3">
+    <inertial>
+      <origin
+        xyz="0.0494697647693084 2.78259911860868E-06 -0.0182205302067748"
+        rpy="0 0 0" />
+      <mass
+        value="4.72207899200975E-05" />
+      <inertia
+        ixx="3.98247392316197E-10"
+        ixy="-4.94263166784922E-13"
+        ixz="9.99388334403713E-10"
+        iyy="9.34504982097063E-09"
+        iyz="5.7617819911154E-14"
+        izz="8.94680249022561E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 0.068 -0.03756"
+      rpy="-3.1416 2.3947E-14 1.5708" />
+    <parent
+      link="Link2" />
+    <child
+      link="Link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link4">
+    <inertial>
+      <origin
+        xyz="0.0198450467673939 -0.0115205642408364 0.0414345754121378"
+        rpy="0 0 0" />
+      <mass
+        value="4.88133029135258E-05" />
+      <inertia
+        ixx="6.79406436056827E-09"
+        ixy="2.59673303916342E-10"
+        ixz="-9.3435789458888E-10"
+        iyy="6.28174944471395E-09"
+        iyz="2.28395626737538E-09"
+        izz="1.34767704792959E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.068 0 0.00039"
+      rpy="-1.5708 1.5708 -1.5708" />
+    <parent
+      link="Link3" />
+    <child
+      link="Link4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link5">
+    <inertial>
+      <origin
+        xyz="-0.000433115855291273 2.26645670937942E-06 0.0292848812499442"
+        rpy="0 0 0" />
+      <mass
+        value="5.03091269856487E-05" />
+      <inertia
+        ixx="7.38861307396028E-09"
+        ixy="1.10218254526547E-14"
+        ixz="1.27905880672662E-10"
+        iyy="7.39084520516873E-09"
+        iyz="-6.31911968271831E-13"
+        izz="2.23224027711875E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.020309 -0.00024968 0.0639"
+      rpy="-1.8933E-29 0 1.5708" />
+    <parent
+      link="Link4" />
+    <child
+      link="Link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link6">
+    <inertial>
+      <origin
+        xyz="0.0199387134206775 -0.0103072963172082 0.0442838980646633"
+        rpy="0 0 0" />
+      <mass
+        value="5.59912080400492E-05" />
+      <inertia
+        ixx="1.04458802014287E-08"
+        ixy="2.1640176625572E-10"
+        ixz="-1.03597967784563E-09"
+        iyy="9.37640722780238E-09"
+        iyz="9.67643398326816E-10"
+        izz="1.91151639800537E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="-0.019549 0 0.04834"
+      rpy="-1.8039E-22 -1.2628E-21 3.2497E-08" />
+    <parent
+      link="Link5" />
+    <child
+      link="Link6" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link7_1">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 0.00618601013485101 0.0112693128764177"
+        rpy="0 0 0" />
+      <mass
+        value="6.5066776951286E-06" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link7_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link7_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7_1"
+    type="fixed">
+    <origin
+      xyz="-0.0081113 5.6712E-05 0.06839"
+      rpy="-1.2627E-21 1.8039E-22 -1.5708" />
+    <parent
+      link="Link6" />
+    <child
+      link="Link7_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link7_2">
+    <inertial>
+      <origin
+        xyz="3.7470027081099E-16 -0.0218631400242938 0.0112693128869138"
+        rpy="0 0 0" />
+      <mass
+        value="6.50667771330806E-06" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link7_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pincherArm/meshes/Link7_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7_2"
+    type="prismatic">
+    <origin
+      xyz="0.020309 5.6711E-05 0.06839"
+      rpy="4.4409E-14 -3.8858E-14 1.5708" />
+    <parent
+      link="Link6" />
+    <child
+      link="Link7_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.03"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
